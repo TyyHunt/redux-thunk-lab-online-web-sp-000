@@ -1,5 +1,5 @@
 export default function catsReducer(state= {
-	loading: false, 
+	loading: false,
 	pictures: []
 }, action) {
   switch ( action.type ) {
