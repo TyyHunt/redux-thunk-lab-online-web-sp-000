@@ -23,11 +23,21 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
+function mapStateToProps(state) {
+  return {catPics: state.cats.pictures}
+}
+
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
 
 
-export default App
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
